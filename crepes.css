@@ -1,0 +1,226 @@
+:root {
+    --primary-color: #f8a091;
+    --secondary-color: #f47a6a;
+    --background-color: #e4e4e4;
+    --gray-color: #f2f2f2;
+    --light-color: #f7f7f7;
+    --text-color: #555;
+    --border-color: #f7b5ad;
+    --rating-color: #ffcc00;
+    --icon-color: #f47a6a;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--light-color);
+    padding: 10px 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 30px 0 0 30px;
+    outline: none;
+}
+
+.search-container a {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: white;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+}
+
+.search-container i {
+    margin-left: -30px;
+    color: var(--icon-color);
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+}
+
+.auth a {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--icon-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.auth i {
+    margin-right: 5px;
+}
+
+.menu-links {
+    background-color: var(--gray-color);
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-links a {
+    color: var(--text-color);
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recipe-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.recipe-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.recipe-title {
+    font-size: 2em;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.recipe-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.recipe-author {
+    display: flex;
+    align-items: center;
+}
+
+.recipe-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.recipe-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-author-info small {
+    color: gray;
+}
+
+.recipe-stats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recipe-stats .stat {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: var(--light-color);
+    border-radius: 30px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.recipe-rating {
+    display: flex;
+    align-items: center;
+    color: var(--rating-color);
+}
+
+.recipe-rating span {
+    margin-left: 10px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.ingredients ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.ingredients ul li::before {
+    content: '•';
+    color: var(--icon-color);
+    font-size: 1.5em;
+    padding-right: 10px;
+}
+
+.instructions ol {
+    counter-reset: step-counter;
+}
+
+.instructions ol li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    line-height: 1.6em;
+}
+
+.instructions ol li span {
+    font-weight: bold;
+}
+
+.instructions ol li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter) ".";
+    font-weight: bold;
+    color: var(--icon-color);
+    padding-right: 10px;
+}
